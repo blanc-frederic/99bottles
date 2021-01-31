@@ -1,65 +1,77 @@
 <?php
 
-require __DIR__ . "/../lib/Bottles.php";
+declare(strict_types=1);
 
-class BottlesTest extends \PHPUnit\Framework\TestCase {
-  public function test_the_first_verse() {
-    $expected =
-      "99 bottles of beer on the wall, " .
-      "99 bottles of beer.\n" .
-      "Take one down and pass it around, " .
-      "98 bottles of beer on the wall.\n";
+namespace App\Tests;
 
-    $this->assertEquals($expected, (new Bottles())->verse(99));
-  }
+use App\Bottles;
+use PHPUnit\Framework\TestCase;
 
-  public function test_another_verse() {
-    $this->markTestSkipped('delete when ready to make test pass');
-    $expected =
+class BottlesTest extends TestCase
+{
+    public function testTheFirstVerse()
+    {
+        $expected =
+        "99 bottles of beer on the wall, " .
+        "99 bottles of beer.\n" .
+        "Take one down and pass it around, " .
+        "98 bottles of beer on the wall.\n";
+
+        $this->assertEquals($expected, (new Bottles())->verse(99));
+    }
+
+    public function test_another_verse()
+    {
+        $this->markTestSkipped('delete when ready to make test pass');
+        $expected =
       "3 bottles of beer on the wall, " .
       "3 bottles of beer.\n" .
       "Take one down and pass it around, " .
       "2 bottles of beer on the wall.\n";
 
-    $this->assertEquals($expected, (new Bottles())->verse(3));
-  }
+        $this->assertEquals($expected, (new Bottles())->verse(3));
+    }
 
-  public function test_verse_2() {
-    $this->markTestSkipped('delete when ready to make test pass');
-    $expected =
+    public function test_verse_2()
+    {
+        $this->markTestSkipped('delete when ready to make test pass');
+        $expected =
       "2 bottles of beer on the wall, " .
       "2 bottles of beer.\n" .
       "Take one down and pass it around, " .
       "1 bottle of beer on the wall.\n";
 
-    $this->assertEquals($expected, (new Bottles())->verse(2));
-  }
+        $this->assertEquals($expected, (new Bottles())->verse(2));
+    }
 
-  public function test_verse_1() {
-    $this->markTestSkipped('delete when ready to make test pass');
-    $expected =
+    public function test_verse_1()
+    {
+        $this->markTestSkipped('delete when ready to make test pass');
+        $expected =
       "1 bottle of beer on the wall, " .
       "1 bottle of beer.\n" .
       "Take it down and pass it around, " .
       "no more bottles of beer on the wall.\n";
 
-    $this->assertEquals($expected, (new Bottles())->verse(1));
-  }
+        $this->assertEquals($expected, (new Bottles())->verse(1));
+    }
 
-  public function test_verse_0() {
-    $this->markTestSkipped('delete when ready to make test pass');
-    $expected =
+    public function test_verse_0()
+    {
+        $this->markTestSkipped('delete when ready to make test pass');
+        $expected =
       "No more bottles of beer on the wall, " .
       "no more bottles of beer.\n" .
       "Go to the store and buy some more, " .
       "99 bottles of beer on the wall.\n";
 
-    $this->assertEquals($expected, (new Bottles())->verse(0));
-  }
+        $this->assertEquals($expected, (new Bottles())->verse(0));
+    }
 
-  public function test_a_couple_verses() {
-    $this->markTestSkipped('delete when ready to make test pass');
-    $expected =
+    public function test_a_couple_verses()
+    {
+        $this->markTestSkipped('delete when ready to make test pass');
+        $expected =
       "99 bottles of beer on the wall, " .
       "99 bottles of beer.\n" .
       "Take one down and pass it around, " .
@@ -70,12 +82,13 @@ class BottlesTest extends \PHPUnit\Framework\TestCase {
       "Take one down and pass it around, " .
       "97 bottles of beer on the wall.\n";
 
-    $this->assertEquals($expected, (new Bottles())->verses(99, 98));
-  }
+        $this->assertEquals($expected, (new Bottles())->verses(99, 98));
+    }
 
-  public function test_a_few_verses() {
-    $this->markTestSkipped('delete when ready to make test pass');
-    $expected =
+    public function test_a_few_verses()
+    {
+        $this->markTestSkipped('delete when ready to make test pass');
+        $expected =
       "2 bottles of beer on the wall, " .
       "2 bottles of beer.\n" .
       "Take one down and pass it around, " .
@@ -91,12 +104,13 @@ class BottlesTest extends \PHPUnit\Framework\TestCase {
       "Go to the store and buy some more, " .
       "99 bottles of beer on the wall.\n";
 
-    $this->assertEquals($expected, (new Bottles())->verses(2, 0));
-  }
+        $this->assertEquals($expected, (new Bottles())->verses(2, 0));
+    }
 
-  public function test_the_whole_song() {
-    $this->markTestSkipped('delete when ready to make test pass');
-    $expected = <<< SONG
+    public function test_the_whole_song()
+    {
+        $this->markTestSkipped('delete when ready to make test pass');
+        $expected = <<< SONG
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
 
@@ -398,6 +412,6 @@ No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
 
 SONG;
-    $this->assertEquals($expected, (new Bottles())->song());
-  }
+        $this->assertEquals($expected, (new Bottles())->song());
+    }
 }
