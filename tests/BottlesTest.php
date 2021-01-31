@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class BottlesTest extends TestCase
 {
-    public function testTheFirstVerse()
+    public function testTheFirstVerse(): void
     {
         $expected =
         "99 bottles of beer on the wall, " .
@@ -20,26 +20,24 @@ class BottlesTest extends TestCase
         $this->assertEquals($expected, (new Bottles())->verse(99));
     }
 
-    public function test_another_verse()
+    public function test_another_verse(): void
     {
-        $this->markTestSkipped('delete when ready to make test pass');
         $expected =
-      "3 bottles of beer on the wall, " .
-      "3 bottles of beer.\n" .
-      "Take one down and pass it around, " .
-      "2 bottles of beer on the wall.\n";
+        "3 bottles of beer on the wall, " .
+        "3 bottles of beer.\n" .
+        "Take one down and pass it around, " .
+        "2 bottles of beer on the wall.\n";
 
         $this->assertEquals($expected, (new Bottles())->verse(3));
     }
 
-    public function test_verse_2()
+    public function test_verse_2(): void
     {
-        $this->markTestSkipped('delete when ready to make test pass');
         $expected =
-      "2 bottles of beer on the wall, " .
-      "2 bottles of beer.\n" .
-      "Take one down and pass it around, " .
-      "1 bottle of beer on the wall.\n";
+        "2 bottles of beer on the wall, " .
+        "2 bottles of beer.\n" .
+        "Take one down and pass it around, " .
+        "1 bottle of beer on the wall.\n";
 
         $this->assertEquals($expected, (new Bottles())->verse(2));
     }
