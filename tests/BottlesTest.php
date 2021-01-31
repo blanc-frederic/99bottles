@@ -20,7 +20,7 @@ class BottlesTest extends TestCase
         $this->assertEquals($expected, (new Bottles())->verse(99));
     }
 
-    public function test_another_verse(): void
+    public function testAnotherVerse(): void
     {
         $expected =
         "3 bottles of beer on the wall, " .
@@ -44,7 +44,6 @@ class BottlesTest extends TestCase
 
     public function test_verse_1()
     {
-        $this->markTestSkipped('delete when ready to make test pass');
         $expected =
       "1 bottle of beer on the wall, " .
       "1 bottle of beer.\n" .
@@ -56,7 +55,6 @@ class BottlesTest extends TestCase
 
     public function test_verse_0()
     {
-        $this->markTestSkipped('delete when ready to make test pass');
         $expected =
       "No more bottles of beer on the wall, " .
       "no more bottles of beer.\n" .
@@ -68,7 +66,6 @@ class BottlesTest extends TestCase
 
     public function test_a_couple_verses()
     {
-        $this->markTestSkipped('delete when ready to make test pass');
         $expected =
       "99 bottles of beer on the wall, " .
       "99 bottles of beer.\n" .
@@ -85,7 +82,6 @@ class BottlesTest extends TestCase
 
     public function test_a_few_verses()
     {
-        $this->markTestSkipped('delete when ready to make test pass');
         $expected =
       "2 bottles of beer on the wall, " .
       "2 bottles of beer.\n" .
