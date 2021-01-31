@@ -6,6 +6,11 @@ namespace App;
 
 class Bottles
 {
+    public function song(): string
+    {
+        return $this->verses(99, 0);
+    }
+
     public function verses(int $start, int $end): string
     {
         return implode("\n", array_map(
@@ -42,7 +47,7 @@ class Bottles
                 return $index . " bottles of beer on the wall, " .
                 $index . " bottles of beer.\n" .
                 "Take one down and pass it around, " .
-                ($index -1) . " bottles of beer on the wall.\n";
+                ($index - 1) . " bottles of beer on the wall.\n";
                 break;
         }
     }
