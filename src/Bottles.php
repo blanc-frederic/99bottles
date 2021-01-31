@@ -22,6 +22,20 @@ class Bottles
     public function verse(int $index): string
     {
         switch ($index) {
+            case 7:
+                return "7 bottles of beer on the wall, " .
+                "7 bottles of beer.\n" .
+                "Take one down and pass it around, " .
+                "1 six-pack of beer on the wall.\n";
+                break;
+
+            case 6:
+                return "1 six-pack of beer on the wall, " .
+                "1 six-pack of beer.\n" .
+                "Take one down and pass it around, " .
+                "5 bottles of beer on the wall.\n";
+                break;
+
             case 2:
                 return "2 bottles of beer on the wall, " .
                 "2 bottles of beer.\n" .
