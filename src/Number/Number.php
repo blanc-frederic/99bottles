@@ -13,9 +13,13 @@ class Number
         switch ($number) {
             case 0:
                 return new NumberNone(0);
+            case 1:
+                return new NumberLast(1);
+            case 6:
+                return new NumberPack(6);
+            default:
+                return new self($number);
         }
-
-        return new self($number);
     }
 
     protected function __construct(int $number)
@@ -25,17 +29,7 @@ class Number
 
     public function __toString(): string
     {
-        switch ($this->number) {
-            case 6:
-                return '1 six-pack';
-                break;
-            case 1:
-                return '1 bottle';
-                break;
-            default:
-                return $this->number . ' bottles';
-                break;
-        }
+        return $this->number . ' bottles';
     }
 
     public function next(): Number
@@ -45,11 +39,6 @@ class Number
 
     public function action(): string
     {
-        if ($this->number === 1) {
-            return "Take it down and pass it around, ";
-        }
-
         return "Take one down and pass it around, ";
     }
 }
-
