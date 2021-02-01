@@ -2,13 +2,23 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Number;
 
 class Number
 {
     private int $number;
 
-    public function __construct(int $number)
+    public static function create(int $number)
+    {
+        switch ($number) {
+            case 0:
+                return new NumberNone(0);
+        }
+
+        return new self($number);
+    }
+
+    protected function __construct(int $number)
     {
         $this->number = $number;
     }
@@ -22,9 +32,6 @@ class Number
             case 1:
                 return '1 bottle';
                 break;
-            case 0:
-                return 'no more bottles';
-                break;
             default:
                 return $this->number . ' bottles';
                 break;
@@ -33,21 +40,13 @@ class Number
 
     public function next(): Number
     {
-        if ($this->number === 0) {
-            return new Number(99);
-        }
-
-        return new Number($this->number - 1);
+        return self::create($this->number - 1);
     }
 
     public function action(): string
     {
         if ($this->number === 1) {
             return "Take it down and pass it around, ";
-        }
-
-        if ($this->number === 0) {
-            return "Go to the store and buy some more, ";
         }
 
         return "Take one down and pass it around, ";

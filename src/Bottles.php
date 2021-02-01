@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Number\Number;
+
 class Bottles
 {
     public function song(): string
@@ -21,7 +23,7 @@ class Bottles
 
     public function verse(int $index): string
     {
-        $number = new Number($index);
+        $number = Number::create($index);
 
         return ucfirst((string) $number) . " of beer on the wall, " .
         $number . " of beer.\n" .
