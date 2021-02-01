@@ -17,9 +17,9 @@ class BottleVerse
 
     public function __toString(): string
     {
-        return ucfirst($this->number . " of beer on the wall, ") .
-        $this->number . " of beer.\n" .
+        return ucfirst("{$this->number} of beer on the wall, ") .
+        "{$this->number} of beer.\n" .
         $this->number->action() .
-        $this->number->next() . " of beer on the wall.\n";
+        "{$this->number->next()} of beer on the wall.\n";
     }
 }

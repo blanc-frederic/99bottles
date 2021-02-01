@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Tests\Bottles;
 
 use App\Bottles\Bottles;
 use PHPUnit\Framework\TestCase;
