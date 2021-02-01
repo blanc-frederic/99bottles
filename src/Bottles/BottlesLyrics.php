@@ -6,10 +6,10 @@ namespace App\Bottles;
 
 use App\CountdownVerse;
 
-class BottleLyrics implements CountdownVerse
+class BottlesLyrics implements CountdownVerse
 {
     public function lyrics(int $index): string
     {
-        return (string) new BottleVerse($index);
+        return (string) new BottlesVerse($index);
     }
 }

@@ -10,6 +10,6 @@ class Bottles extends CountdownSong
 {
     public function __construct()
     {
-        parent::__construct(new BottleLyrics(), 99);
+        parent::__construct(new BottlesLyrics(), 99);
     }
 }

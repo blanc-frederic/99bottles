@@ -6,7 +6,7 @@ namespace App\Bottles;
 
 use App\Bottles\Number\Number;
 
-class BottleVerse
+class BottlesVerse
 {
     private Number $number;
 
