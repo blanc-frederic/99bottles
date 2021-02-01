@@ -21,15 +21,15 @@ class Bottles
 
     public function verse(int $index): string
     {
-        return ucfirst($this->indexToText($index)) . " of beer on the wall, " .
-        $this->indexToText($index) . " of beer.\n" .
+        return ucfirst($this->numberToText($index)) . " of beer on the wall, " .
+        $this->numberToText($index) . " of beer.\n" .
         $this->action($index) .
-        $this->indexToText($this->nextIndex($index)) . " of beer on the wall.\n";
+        $this->numberToText($this->nextNumber($index)) . " of beer on the wall.\n";
     }
 
-    private function indexToText(int $index): string
+    private function numberToText(int $number): string
     {
-        switch ($index) {
+        switch ($number) {
             case 6:
                 return '1 six-pack';
                 break;
@@ -40,30 +40,30 @@ class Bottles
                 return 'no more bottles';
                 break;
             default:
-                return $index . ' bottles';
+                return $number . ' bottles';
                 break;
         }
     }
 
-    private function action(int $index): string
+    private function action(int $number): string
     {
-        if ($index === 1) {
+        if ($number === 1) {
             return "Take it down and pass it around, ";
         }
 
-        if ($index === 0) {
+        if ($number === 0) {
             return "Go to the store and buy some more, ";
         }
 
         return "Take one down and pass it around, ";
     }
 
-    private function nextIndex(int $index): int
+    private function nextNumber(int $number): int
     {
-        if ($index === 0) {
+        if ($number === 0) {
             return 99;
         }
 
-        return $index - 1;
+        return $number - 1;
     }
 }
