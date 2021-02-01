@@ -2,18 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Bottles;
 
-use App\Number\Number;
+use App\Bottles\Number\Number;
 
 class BottleVerse
 {
     private Number $number;
-
-    public static function lyrics(int $index): string
-    {
-        return (string) new self($index);
-    }
 
     public function __construct(int $index)
     {
